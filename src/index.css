@@ -52,4 +52,9 @@ button:hover {
 
 a {
   text-decoration: underline;
+  color: #45a049;
+}
+
+a:hover {
+  cursor: pointer;
 }
