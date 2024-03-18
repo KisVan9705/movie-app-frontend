@@ -1,19 +1,27 @@
+import { useState } from "react";
 import axios from "axios";
 import { useState } from "react";
 
 function Registration(props) {
   const apiUrl = "http://localhost:8080/signup";
+  const [username, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmedPassword, setConfirmedPassword] = useState("");
 
   function renderLogin(params) {
     props.handleClick();
   }
-
-  // Initialize state for form inputs
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+  const registerUser = (event) => {
+    event.preventDefault();
+   
+    const postData = {
+      username: username,
+      email: email,
+      password: password,
+      confirmedPassword: confirmedPassword,
+    };
+    console.log(postData);
 
   // Event handler to update form state when input changes
   const handleChange = (event) => {
@@ -28,10 +36,11 @@ function Registration(props) {
 
     // Send form data to the server
     axios
-      .post(apiUrl, formData)
+      .post(apiUrl, postData)
       .then((response) => {
         console.log("Response data:", response.data);
         localStorage.setItem("token", response.data.token);
+        //we have to redirect the user to home page after successful registration
       })
       .catch((error) => {
         console.error("Error:", error.message);
@@ -41,15 +50,48 @@ function Registration(props) {
   return (
     <div className='container'>
       <h1>Create Your IMDb Account</h1>
-      <form onSubmit={handleSubmit}>
-        <div className='form-group'>
-          <label htmlFor='name'>Username:</label>
+      <form onSubmit={registerUser}>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
           <input
-            type='text'
-            name='username'
-            id='name'
-            value={formData.username}
-            onChange={handleChange}
+            type="text"
+            name="username"
+            id="name"
+            value={username}
+            onChange={(e) => setUserName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="confirm-password">Confirm Password:</label>
+          <input
+            type="password"
+            name="confirmedPassword"
+            id="confirm-password"
+            value={confirmedPassword}
+            onChange={(e) => setConfirmedPassword(e.target.value)}
             required
           />
         </div>
@@ -59,7 +101,7 @@ function Registration(props) {
             type='email'
             name='email'
             id='email'
-            value={formData.email}
+            value={email}
             onChange={handleChange}
             required
           />
@@ -70,7 +112,7 @@ function Registration(props) {
             type='password'
             name='password'
             id='password'
-            value={formData.password}
+            value={password}
             onChange={handleChange}
             required
           />
@@ -81,6 +123,8 @@ function Registration(props) {
             type='password'
             name='confirm-password'
             id='confirm-password'
+            value={confirmedPassword}
+            onChange={handleChange}
             required
           />
         </div>
