@@ -13,16 +13,7 @@ function Registration(props) {
   }
   const registerUser = (event) => {
     event.preventDefault();
-    /**
-     * event.preventDefault(); // Prevent default form submission
-    const formData = new FormData(event.target);
-    const postData = {
-      username: formData.get("name"),
-      email: formData.get("email"),
-      password: formData.get("password"),
-    };
-    console.log(postData);
-     */
+
     const postData = {
       username: username,
       email: email,
@@ -30,20 +21,27 @@ function Registration(props) {
       confirmedPassword: confirmedPassword,
     };
     console.log(postData);
-
+    // Send form data to the server
     axios
       .post(apiUrl, postData)
       .then((response) => {
-        // Handle successful response
         console.log("Response data:", response.data);
         localStorage.setItem("token", response.data.token);
         //we have to redirect the user to home page after successful registration
       })
       .catch((error) => {
-        // Handle error
         console.error("Error:", error.message);
       });
   };
+  // Initialize state for form inputs
+
+  // Event handler to update form state when input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+    console.log("handle Change called", formData);
+  };
+
   return (
     <div className="container">
       <h1>Create Your IMDb Account</h1>
