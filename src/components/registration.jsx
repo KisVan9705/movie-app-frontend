@@ -35,7 +35,7 @@ function Registration(props) {
   };
 
   return (
-    <div className='container'>
+    <div className='mycontainer'>
       <h1>Create Your IMDb Account</h1>
       <form onSubmit={registerUser}>
         <div className='form-group'>

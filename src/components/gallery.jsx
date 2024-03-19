@@ -20,11 +20,12 @@ function Gallery() {
     };
 
     fetchData();
-  }, [isAuthenticated()]); // Empty dependency array [] means useEffect runs only once after mount
+  }, []); // Empty dependency array [] means useEffect runs only once after mount
 
   return (
     <div>
       <h2>Gallery</h2>
+      <p className='text-3xl font-bold underline'>Hello world!</p>
       <ul>
         {data ? (
           data.map((item) => (
