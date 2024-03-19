@@ -11,7 +11,7 @@ export function navigateIfAuthenticated(url) {
 }
 
 export function signOut() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   localStorage.removeItem("token");
-  navigate("/");
+  // navigate("/");
 }
