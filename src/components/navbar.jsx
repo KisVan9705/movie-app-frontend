@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   Navbar,
   Nav,
@@ -11,6 +12,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, signOut } from "../utils/authentication";
 
 function MyNavbar() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate(); // Get history object
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate(`/search/${searchTerm}`); // Redirect with search term
+  };
+
   return (
     <Navbar bg='dark' variant='dark' expand='lg'>
       <Container>
@@ -37,17 +46,25 @@ function MyNavbar() {
               placeholder='Search IMDb'
               className='me-2'
               aria-label='Search'
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Button variant='outline-light'>Search</Button>
+            <Button variant='outline-light' onClick={handleSubmit}>
+              Search
+            </Button>
           </Form>
           <div className='pr-4'>
             {!isAuthenticated() ? (
               <Link to='/login'>
-                <Button>Sign In</Button>
+                <Button variant='outline-light' className='ms-4'>
+                  Sign In
+                </Button>
               </Link>
             ) : (
               <Link to='/login' onClick={signOut}>
-                <Button>Sign Out</Button>
+                <Button variant='outline-light' className='ms-4'>
+                  Sign Out
+                </Button>
               </Link>
             )}
           </div>
