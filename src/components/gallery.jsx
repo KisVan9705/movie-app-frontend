@@ -28,8 +28,8 @@ function Gallery() {
       <p className='text-3xl font-bold underline'>Hello world!</p>
       <ul>
         {data ? (
-          data.map((item) => (
-            <li key={item.id}>
+          data.map((item, index) => (
+            <li key={index}>
               <h3>{item.title}</h3>
               <p>{item.year}</p>
               <p>{item.rated}</p>

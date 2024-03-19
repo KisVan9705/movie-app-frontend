@@ -17,7 +17,7 @@ function MyNavbar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate(`/search/${searchTerm}`); // Redirect with search term
+    navigate(`/search/?searchText=${searchTerm}`); // Redirect with search term
   };
 
   return (
