@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 // import "./index.css";
 import { isAuthenticated } from "./utils/authentication";
+import Search from "./components/search";
 
 function App() {
   const ProtectedRoute = ({ element }) => {
@@ -16,6 +17,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<ProtectedRoute element={<Home />} />} />
+        <Route
+          path='/search'
+          element={<ProtectedRoute element={<Search />} />}
+        />
         <Route
           path='/login'
           element={isAuthenticated() ? <Navigate to='/' /> : <Login />}
