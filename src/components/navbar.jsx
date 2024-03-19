@@ -48,7 +48,7 @@ function Navbar() {
           <span>Sign In</span>
         </Link>
       ) : (
-        <Link className='navbar-user' onClick={signOut}>
+        <Link to='/login' className='navbar-user' onClick={signOut}>
           <i className='fas fa-user'></i>
 
           <span>Sign Out</span>
