@@ -40,15 +40,17 @@ function MyNavbar() {
             />
             <Button variant='outline-light'>Search</Button>
           </Form>
-          {!isAuthenticated() ? (
-            <Link to='/login'>
-              <Button>Sign In</Button>
-            </Link>
-          ) : (
-            <Link to='/login' onClick={signOut}>
-              <Button>Sign Out</Button>
-            </Link>
-          )}
+          <div className='pr-4'>
+            {!isAuthenticated() ? (
+              <Link to='/login'>
+                <Button>Sign In</Button>
+              </Link>
+            ) : (
+              <Link to='/login' onClick={signOut}>
+                <Button>Sign Out</Button>
+              </Link>
+            )}
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

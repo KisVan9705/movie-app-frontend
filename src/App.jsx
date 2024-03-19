@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Registration from "./components/registration";
-import Login2 from "./components/login";
+import Login from "./components/login";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
@@ -18,7 +18,7 @@ function App() {
         <Route path='/' element={<ProtectedRoute element={<Home />} />} />
         <Route
           path='/login'
-          element={isAuthenticated() ? <Navigate to='/' /> : <Login2 />}
+          element={isAuthenticated() ? <Navigate to='/' /> : <Login />}
         />
         <Route
           path='/registration'
