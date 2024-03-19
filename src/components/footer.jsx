@@ -17,16 +17,24 @@ function ImdbFooter() {
             <h5 className='mb-3'>About IMDb</h5>
             <ListGroup variant='flush'>
               <ListGroupItem className='bg-dark'>
-                <Nav.Link href='/'>Press Room</Nav.Link>
+                <Nav.Link href='/' style={{ color: "white" }}>
+                  Press Room
+                </Nav.Link>
               </ListGroupItem>
               <ListGroupItem className='bg-dark'>
-                <Nav.Link href='/'>Investor Relations</Nav.Link>
+                <Nav.Link href='/' style={{ color: "white" }}>
+                  Investor Relations
+                </Nav.Link>
               </ListGroupItem>
               <ListGroupItem className='bg-dark'>
-                <Nav.Link href='/'>Jobs</Nav.Link>
+                <Nav.Link href='/' style={{ color: "white" }}>
+                  Jobs
+                </Nav.Link>
               </ListGroupItem>
               <ListGroupItem className='bg-dark'>
-                <Nav.Link href='/'>Conditions of Use</Nav.Link>
+                <Nav.Link href='/' style={{ color: "white" }}>
+                  Conditions of Use
+                </Nav.Link>
               </ListGroupItem>
             </ListGroup>
           </Col>
@@ -34,10 +42,14 @@ function ImdbFooter() {
             <h5 className='mb-3'>Visit IMDbPro</h5>
             <ListGroup variant='flush'>
               <ListGroupItem className='bg-dark'>
-                <Nav.Link href='/'>Sign Up</Nav.Link>
+                <Nav.Link href='/' style={{ color: "white" }}>
+                  Sign Up
+                </Nav.Link>
               </ListGroupItem>
               <ListGroupItem className='bg-dark'>
-                <Nav.Link href='/'>Help</Nav.Link>
+                <Nav.Link href='/' style={{ color: "white" }}>
+                  Help
+                </Nav.Link>
               </ListGroupItem>
             </ListGroup>
           </Col>
@@ -50,10 +62,14 @@ function ImdbFooter() {
                 </Nav.Link>
               </ListGroupItem>
               <ListGroupItem className='bg-dark'>
-                <a href='/'>Twitter</a>
+                <Nav.Link href='/' style={{ color: "white" }}>
+                  Twitter
+                </Nav.Link>
               </ListGroupItem>
               <ListGroupItem className='bg-dark'>
-                <a href='/'>Instagram</a>
+                <Nav.Link href='/' style={{ color: "white" }}>
+                  Instagram
+                </Nav.Link>
               </ListGroupItem>
             </ListGroup>
           </Col>
