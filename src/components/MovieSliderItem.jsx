@@ -3,7 +3,7 @@ import React from "react";
 const MovieSliderItem = ({ movie, handlePrevClick, handleNextClick }) => {
   return movie ? (
     <div className="movieContainer">
-      <button onClick={handlePrevClick}>{"<"}</button>
+      <button id="leftArrow" onClick={handlePrevClick}>{"<"}</button>
       <div
         className=""
         style={{
@@ -21,7 +21,7 @@ const MovieSliderItem = ({ movie, handlePrevClick, handleNextClick }) => {
           </div>
         </div>
       </div>
-      <button onClick={handleNextClick}>{">"}</button>
+      <button id="rightArrow" onClick={handleNextClick}>{">"}</button>
     </div>
   ) : (
     <p>No movie found</p>

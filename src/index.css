@@ -83,11 +83,36 @@ body {
      text-align: center;
 }
 .movieContainer > button{
-  background-color:white;
-  color:gray;
+  background-color:rgb(50,50,50,0.9);
+  color:white;
   font-size: 40px;
+  border: none;
+ 
 }
 
-.movieItem >span{
-  text-align: center;
+.movieContainer >button#leftArrow{
+  position: relative;
+  left: 37px;
+}
+.movieContainer >button#rightArrow{
+  position: relative;
+  right:37px;
+}
+
+.movieItem {
+  max-height: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 10px;
+ 
+
+}
+.movieItem > span{
+  padding-left: 10px;
+  font-size: 18px;
+}
+.parentContainer{
+  margin-left: 62px;
+ 
 }

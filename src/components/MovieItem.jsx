@@ -14,7 +14,7 @@ export const MovieItem = ({
       }}
       onClick={() => handleListItemClick(index)}
     >
-      <img src={movie.poster} alt=" movie poster" width="60px" />
+      <img src={movie.poster} alt=" movie poster" width="75px" />
       <span>{movie.title}</span>
     </div>
   );
