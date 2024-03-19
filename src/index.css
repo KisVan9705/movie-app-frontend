@@ -4,7 +4,7 @@ body {
   padding: 0;
 }
 
-.container {
+.mycontainer {
   width: 400px;
   margin: 50px auto;
   padding: 20px;
@@ -13,30 +13,30 @@ body {
   background-color: #f1f1f1;
 }
 
-h1 {
+.mycontainer h1 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.form-group {
+.mycontainer .form-group {
   margin-bottom: 15px;
 }
 
-label {
+.mycontainer label {
   display: block;
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+.mycontainer input[type="text"],
+.mycontainer input[type="email"],
+.mycontainer input[type="password"] {
   width: 95%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-button {
+.mycontainer button {
   background-color: #4caf50; /* Green color */
   color: white;
   padding: 10px 20px;
@@ -46,82 +46,15 @@ button {
   margin-top: 10px;
 }
 
-button:hover {
+.mycontainer button:hover {
   background-color: #45a049; /* Darker green on hover */
 }
 
-a {
+.mycontainer a {
   text-decoration: underline;
   color: #45a049;
 }
 
-a:hover {
+.mycontainer a:hover {
   cursor: pointer;
-}
-
-/* Navbar.css */
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #242424;
-  color: #fff;
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.navbar-brand img {
-  width: 50px;
-  height: auto;
-  margin-right: 1rem;
-}
-
-.navbar-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.navbar-nav {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item {
-  margin-right: 1rem;
-}
-
-.nav-link {
-  color: inherit;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s ease-in-out;
-}
-
-.nav-link:hover {
-  color: #f0c000;
-}
-
-.navbar-user {
-  display: flex;
-  align-items: center;
-  color: inherit;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s ease-in-out;
-}
-
-.navbar-user:hover {
-  color: #f0c000;
-}
-
-.navbar-user i {
-  margin-right: 0.5rem;
 }
