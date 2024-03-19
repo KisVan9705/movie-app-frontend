@@ -1,61 +1,60 @@
 import React from "react";
+import {
+  Navbar,
+  Nav,
+  Container,
+  Form,
+  FormControl,
+  Button,
+} from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, signOut } from "../utils/authentication";
 
-function Navbar() {
-  const navigate = useNavigate();
-  function signOut() {
-    localStorage.removeItem("token");
-    navigate("/");
-  }
+function MyNavbar() {
   return (
-    <nav className='navbar'>
-      <a href='/' className='navbar-brand'>
-        <img src='./src/assets/imdb_logo.png' alt='IMDB Logo' />
-        <span className='navbar-title'>IMDb</span>
-      </a>
-      <ul className='navbar-nav'>
-        <li className='nav-item'>
-          <a href='/' className='nav-link'>
-            Movies & TV
-          </a>
-        </li>
-        <li className='nav-item'>
-          <a href='/' className='nav-link'>
-            Celebs
-          </a>
-        </li>
-        <li className='nav-item'>
-          <a href='/' className='nav-link'>
-            TV Shows
-          </a>
-        </li>
-        <li className='nav-item'>
-          <a href='/' className='nav-link'>
-            News & Awards
-          </a>
-        </li>
-        <li className='nav-item'>
-          <a href='/' className='nav-link'>
-            <i className='fas fa-search'></i>
-          </a>
-        </li>
-      </ul>
-      {!isAuthenticated() ? (
-        <Link to='/login' className='navbar-user'>
-          <i className='fas fa-user'></i>
-
-          <span>Sign In</span>
-        </Link>
-      ) : (
-        <Link to='/login' className='navbar-user' onClick={signOut}>
-          <i className='fas fa-user'></i>
-
-          <span>Sign Out</span>
-        </Link>
-      )}
-    </nav>
+    <Navbar bg='dark' variant='dark' expand='lg'>
+      <Container>
+        <Navbar.Brand href='/'>
+          <img
+            src='./src/assets/imdb_logo.png'
+            alt='IMDb Logo'
+            width='50px'
+            height='auto'
+          />
+          <span className='navbar-title'>IMDb</span>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        <Navbar.Collapse id='basic-navbar-nav'>
+          <Nav className='me-auto'>
+            <Nav.Link href='/'>Movies & TV</Nav.Link>
+            <Nav.Link href='/'>Celebs</Nav.Link>
+            <Nav.Link href='/'>TV Shows</Nav.Link>
+            <Nav.Link href='/'>News & Awards</Nav.Link>
+          </Nav>
+          <Form inline className='d-flex'>
+            <FormControl
+              type='search'
+              placeholder='Search IMDb'
+              className='me-2'
+              aria-label='Search'
+            />
+            <Button variant='outline-light'>Search</Button>
+          </Form>
+          <div className='pr-4'>
+            {!isAuthenticated() ? (
+              <Link to='/login'>
+                <Button>Sign In</Button>
+              </Link>
+            ) : (
+              <Link to='/login' onClick={signOut}>
+                <Button>Sign Out</Button>
+              </Link>
+            )}
+          </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default MyNavbar;

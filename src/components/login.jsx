@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
 function Login(props) {
   const apiUrl = "http://localhost:8080/login";
   const [email, setEmail] = useState("");
@@ -35,7 +36,7 @@ function Login(props) {
   };
 
   return (
-    <div className='container'>
+    <div className='mycontainer'>
       <h1>Welcome Back to IMDb</h1>
       <form onSubmit={loginUser}>
         <div className='form-group'>

@@ -2,9 +2,9 @@ import { useState } from "react";
 import Registration from "./components/registration";
 import Login from "./components/login";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
-import "./index.css";
+// import "./index.css";
 import { isAuthenticated } from "./utils/authentication";
 
 function App() {
