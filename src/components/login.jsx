@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, redirect } from "react-router-dom";
-import { navigateIfAuthenticated } from "../utils/authentication";
 import { useNavigate } from "react-router-dom";
 function Login(props) {
   const apiUrl = "http://localhost:8080/login";
