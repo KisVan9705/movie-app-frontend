@@ -7,7 +7,7 @@ const Slider = () => {
   const [data, setData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const urlApi = "http://localhost:8080/search?country=USA&number=5";
+  const urlApi = "http://localhost:8080/search?country=USA&number=4";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,7 +39,7 @@ const Slider = () => {
   };
 
   return (
-    <div style={{ display: "flex" }}>
+    <div className="parentContainer"  style={{ display: "flex" }}>
       <MovieSliderItem
         movie={data[currentIndex]}
         handleNextClick={handleNextClick}
