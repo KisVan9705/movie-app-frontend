@@ -109,11 +109,7 @@ body {
 }
 .parentContainer {
   margin-left: 62px;
- 
 }
-
-
-
 
 .topTenMoviesContainer {
   display: flex;
@@ -168,9 +164,9 @@ body {
   border-left: 5px solid green
 }
 
-#left-arrow{
-  background-color:rgb(50,50,50,0.9);
-  color:white;
+#left-arrow {
+  background-color: rgb(50, 50, 50, 0.9);
+  color: white;
   font-size: 40px;
   border: none;
   position: relative;
@@ -178,9 +174,9 @@ body {
   bottom:40px;
 
 }
-#right-arrow{
-  background-color:rgb(50,50,50,0.9);
-  color:white;
+#right-arrow {
+  background-color: rgb(50, 50, 50, 0.9);
+  color: white;
   font-size: 40px;
   border: none;
   position: relative;
