@@ -20,59 +20,53 @@ function MyNavbar() {
     navigate(`/search/?searchText=${searchTerm}`); // Redirect with search term
   };
 
-  // const handleKeyDown = (event) => {
-  //   if (event.key === "Enter") {
-  //     handleSubmit(event);
-  //   }
-  // };
-
   return (
-    <Navbar bg='dark' variant='dark' expand='lg'>
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href='/'>
+        <Navbar.Brand href="/">
           <img
-            src='../src/assets/imdb_logo.png'
-            alt='IMDb Logo'
-            width='50px'
-            height='auto'
+            src="../src/assets/imdb_logo.png"
+            alt="IMDb Logo"
+            width="50px"
+            height="auto"
           />
-          <span className='navbar-title'>IMDb</span>
+          <span className="navbar-title">IMDb</span>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='me-auto'>
-            <Nav.Link href='/'>Movies & TV</Nav.Link>
-            <Nav.Link href='/'>Celebs</Nav.Link>
-            <Nav.Link href='/'>TV Shows</Nav.Link>
-            <Nav.Link href='/'>News & Awards</Nav.Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/">Movies & TV</Nav.Link>
+            <Nav.Link href="/">Celebs</Nav.Link>
+            <Nav.Link href="/">TV Shows</Nav.Link>
+            <Nav.Link href="/">News & Awards</Nav.Link>
           </Nav>
-          <Form inline className='d-flex'>
+          <Form inline className="d-flex">
             <FormControl
-              type='search'
-              placeholder='Search IMDb'
-              className='me-2'
-              aria-label='Search'
+              type="search"
+              placeholder="Search IMDb"
+              className="me-2"
+              aria-label="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <Button
-              variant='outline-light'
+              variant="outline-light"
               onClick={handleSubmit}
-              type='submit'
+              type="submit"
             >
               Search
             </Button>
           </Form>
-          <div className='pr-4'>
+          <div className="pr-4">
             {!isAuthenticated() ? (
-              <Link to='/login'>
-                <Button variant='outline-light' className='ms-4'>
+              <Link to="/login">
+                <Button variant="outline-light" className="ms-4">
                   Sign In
                 </Button>
               </Link>
             ) : (
-              <Link to='/login' onClick={signOut}>
-                <Button variant='outline-light' className='ms-4'>
+              <Link to="/login" onClick={signOut}>
+                <Button variant="outline-light" className="ms-4">
                   Sign Out
                 </Button>
               </Link>

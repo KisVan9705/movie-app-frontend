@@ -7,27 +7,32 @@ import Home from "./pages/Home";
 // import "./index.css";
 import { isAuthenticated } from "./utils/authentication";
 import Search from "./components/search";
+import { SingleMovie } from "./components/singleMovie";
 
 function App() {
   const ProtectedRoute = ({ element }) => {
-    return isAuthenticated() ? element : <Navigate to='/login' />;
+    return isAuthenticated() ? element : <Navigate to="/login" />;
   };
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<ProtectedRoute element={<Home />} />} />
+        <Route path="/" element={<ProtectedRoute element={<Home />} />} />
         <Route
-          path='/search'
+          path="/search"
           element={<ProtectedRoute element={<Search />} />}
         />
         <Route
-          path='/login'
-          element={isAuthenticated() ? <Navigate to='/' /> : <Login />}
+          path="/movie/"
+          element={<ProtectedRoute element={<SingleMovie />} />}
         />
         <Route
-          path='/registration'
-          element={isAuthenticated() ? <Navigate to='/' /> : <Registration />}
+          path="/login"
+          element={isAuthenticated() ? <Navigate to="/" /> : <Login />}
+        />
+        <Route
+          path="/registration"
+          element={isAuthenticated() ? <Navigate to="/" /> : <Registration />}
         />
       </Routes>
     </BrowserRouter>
