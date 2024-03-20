@@ -6,7 +6,7 @@ export const MovieItem = ({
 }) => {
   return (
     <div
-      className='movieItem'
+      className="movieItem"
       key={movie.id}
       style={{
         cursor: "pointer",
@@ -14,7 +14,7 @@ export const MovieItem = ({
       }}
       onClick={() => handleListItemClick(index)}
     >
-      <img src={movie.poster} alt=' movie poster' width='75px' />
+      <img src={movie.poster} alt=" movie poster" width="75px" />
       <span>{movie.title}</span>
     </div>
   );
