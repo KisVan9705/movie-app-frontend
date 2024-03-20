@@ -4,6 +4,14 @@ import MyNavbar from "../components/navbar";
 import ImdbFooter from "../components/footer";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
+import {
+  Nav,
+  Container,
+  Row,
+  Col,
+  ListGroup,
+  ListGroupItem,
+} from "react-bootstrap";
 
 function Search() {
   const [data, setData] = useState(null); // State to store fetched data
@@ -35,10 +43,18 @@ function Search() {
         <div className='mycontainer'>
           {data ? (
             data.map((item, index) => (
-              <div key={index}>
-                <h3>{item.title}</h3>
-                <p>{item.year}</p>
-                <p>{item.rated}</p>
+              <div className='flex' key={index}>
+                <ListGroup variant='flush' className='mb-4'>
+                  <ListGroupItem
+                    className='bg-dark '
+                    style={{ color: "white" }}
+                  >
+                    Title:&nbsp;
+                    {item.title}
+                  </ListGroupItem>
+                  <ListGroupItem>Year:&nbsp;{item.year}</ListGroupItem>
+                  <ListGroupItem>Rating:&nbsp;{item.rated}</ListGroupItem>
+                </ListGroup>
               </div>
             ))
           ) : (
