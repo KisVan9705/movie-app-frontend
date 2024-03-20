@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { CurrentMovie } from "./currentMovie";
 
-const TopTenMovies = () => {
-  const uriApi = "http://localhost:8080/search?country=USA&number=10";
+const TopTenMovies = ({ genre, title, colorType }) => {
+  const uriApi = "http://localhost:8080/search?genre=" + genre + "&number=10";
   const [movies, setMovies] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const totalVisible = 7;
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -20,46 +22,58 @@ const TopTenMovies = () => {
   }, [uriApi]);
 
   const handleBackClick = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? movies.length - 1 : prevIndex - 1
-    );
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? movies.length - 1 : prevIndex - 1
+      );
+    }
   };
 
   const handleForwardClick = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === movies.length - 1 ? 0 : prevIndex + 1
-    );
+    if (totalVisible - currentIndex > 0) {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === movies.length - 1 ? 0 : prevIndex + 1
+      );
+    }
   };
 
-  const visibleMovies = movies.slice(currentIndex, currentIndex + 5);
+  const visibleMovies = movies.slice(currentIndex, currentIndex + totalVisible);
 
   return (
     <div className="mainMovieContainer">
-      <h2 style={{ "margin-left": "35px", "border-left": "5px solid yellow" }}>
-        Top 10 on IMDb this week
-      </h2>
+      <hr className="separator" />
+      <h2 className={colorType}>{title}</h2>
       <div className="topTenMoviesContainer">
-        <button onClick={handleBackClick} id="left-arrow">
+        <button
+          onClick={handleBackClick}
+          id="left-arrow"
+          style={{
+            visibility: currentIndex > 0 ? "visible" : "hidden",
+          }}
+        >
           &#60;
         </button>
+
         <div className="moviesWrapper">
           {visibleMovies.map((movie, index) => (
-            <div key={index} className="currentMovie">
-              <img src={movie.poster} alt="movies poster" />
-              <br />
-              <p>
-                ⭐️ <strong>{movie.imdbIDRating}</strong>
-              </p>
-              <h3>
-                {currentIndex + index + 1}. {movie.title}
-              </h3>
-              <p>
-                <strong>Genre:</strong> {movie.genre}
-              </p>
-            </div>
+            <CurrentMovie
+              movie={movie}
+              index={index}
+              currentIndex={currentIndex}
+            ></CurrentMovie>
           ))}
         </div>
-        <button onClick={handleForwardClick} id="right-arrow">
+
+        <button
+          onClick={handleForwardClick}
+          id="right-arrow"
+          style={{
+            visibility:
+              currentIndex < movies.length - totalVisible
+                ? "visible"
+                : "hidden",
+          }}
+        >
           &#62;
         </button>
       </div>
