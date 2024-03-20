@@ -20,7 +20,7 @@ function Gallery() {
     };
 
     fetchData();
-  }, []); // Empty dependency array [] means useEffect runs only once after mount
+  }, [isAuthenticated]); // Empty dependency array [] means useEffect runs only once after mount
 
   return (
     <div>
