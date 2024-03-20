@@ -4,6 +4,7 @@ import Slider from "../components/slider";
 import { isAuthenticated } from "../utils/authentication";
 import MyNavbar from "../components/navbar";
 import ImdbFooter from "../components/footer";
+import TopTenMovie from "../components/topTenMovie";
 
 function Home() {
   return (
@@ -13,7 +14,8 @@ function Home() {
         <div>
           {" "}
           <Slider></Slider>
-          <Gallery></Gallery>
+          <TopTenMovie></TopTenMovie>
+          {/* <Gallery></Gallery> */}
         </div>
       ) : (
         <div>Sign In please</div>

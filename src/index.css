@@ -109,4 +109,59 @@ body {
 }
 .parentContainer {
   margin-left: 62px;
+ 
 }
+
+
+
+
+.topTenMoviesContainer {
+  display: flex;
+  align-items: center;
+}
+
+.moviesWrapper {
+  display: flex;
+  overflow-x: hidden; /* Hide overflow */
+}
+
+.currentMovie {
+  flex: 0 0 auto; /* Allow shrinking, no growing, start at its defined size */
+  width: 300px; /* Adjust width as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.hiddenMovie {
+  display: none;
+}
+
+h1{
+  padding: 40px;
+}
+.mainMovieContainer{
+  margin-left:65px;
+  /* margin-right: 30px; */
+}
+
+#left-arrow{
+  background-color:rgb(50,50,50,0.9);
+  color:white;
+  font-size: 40px;
+  border: none;
+  position: relative;
+  left: 37px;
+  bottom:40px;
+
+}
+#right-arrow{
+  background-color:rgb(50,50,50,0.9);
+  color:white;
+  font-size: 40px;
+  border: none;
+  position: relative;
+  right: 37px;
+  bottom:40px;
+
+}
+
