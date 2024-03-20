@@ -51,7 +51,6 @@ export const SingleMovie = () => {
                 <p>Country : {data.country}</p>
                 <p>Languages :{data.language}</p>
                 <p>Rating : {data.imdbIDRating}</p>
-                <p>Id : {data.id}</p>
               </div>
             </div>
           ) : (
