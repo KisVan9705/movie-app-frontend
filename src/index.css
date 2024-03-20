@@ -109,11 +109,7 @@ body {
 }
 .parentContainer {
   margin-left: 62px;
- 
 }
-
-
-
 
 .topTenMoviesContainer {
   display: flex;
@@ -136,32 +132,61 @@ body {
   display: none;
 }
 
-h1{
+h1 {
   padding: 40px;
 }
-.mainMovieContainer{
-  margin-left:65px;
+.mainMovieContainer {
+  margin-left: 65px;
   /* margin-right: 30px; */
 }
 
-#left-arrow{
-  background-color:rgb(50,50,50,0.9);
-  color:white;
+#left-arrow {
+  background-color: rgb(50, 50, 50, 0.9);
+  color: white;
   font-size: 40px;
   border: none;
   position: relative;
   left: 37px;
-  bottom:40px;
-
+  bottom: 40px;
 }
-#right-arrow{
-  background-color:rgb(50,50,50,0.9);
-  color:white;
+#right-arrow {
+  background-color: rgb(50, 50, 50, 0.9);
+  color: white;
   font-size: 40px;
   border: none;
   position: relative;
   right: 37px;
-  bottom:40px;
-
+  bottom: 40px;
 }
 
+.search-Container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+.search-Container .inside-search-Container:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.movieSearchItem {
+  max-height: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-top: 5px;
+  border-bottom: 1px solid lightgray;
+}
+.movieSearchItem > span {
+  padding-left: 10px;
+  font-size: 18px;
+}
+.movieSearchItem > label {
+  margin-right: 20px;
+  align-self: flex-start;
+}
