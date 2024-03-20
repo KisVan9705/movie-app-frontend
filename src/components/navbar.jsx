@@ -20,12 +20,18 @@ function MyNavbar() {
     navigate(`/search/?searchText=${searchTerm}`); // Redirect with search term
   };
 
+  // const handleKeyDown = (event) => {
+  //   if (event.key === "Enter") {
+  //     handleSubmit(event);
+  //   }
+  // };
+
   return (
     <Navbar bg='dark' variant='dark' expand='lg'>
       <Container>
         <Navbar.Brand href='/'>
           <img
-            src='./src/assets/imdb_logo.png'
+            src='../src/assets/imdb_logo.png'
             alt='IMDb Logo'
             width='50px'
             height='auto'
@@ -49,7 +55,11 @@ function MyNavbar() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Button variant='outline-light' onClick={handleSubmit}>
+            <Button
+              variant='outline-light'
+              onClick={handleSubmit}
+              type='submit'
+            >
               Search
             </Button>
           </Form>
