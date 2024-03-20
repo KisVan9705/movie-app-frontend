@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/navbar";
 import Gallery from "../components/gallery";
 import Slider from "../components/slider";
 import { isAuthenticated } from "../utils/authentication";
