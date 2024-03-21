@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const TopTenMovie = () => {
-  const uriApi = "http://localhost:8080/search?country=USA&number=10";
+  const uriApi = "http://localhost:8080/movie/search?country=USA&number=10";
   const [movies, setMovies] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
