@@ -258,3 +258,7 @@ body {
     vertical-align: middle;
   }
 }
+
+.table-image button {
+  margin: 15px;
+}

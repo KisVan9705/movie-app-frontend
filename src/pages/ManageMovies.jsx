@@ -12,21 +12,7 @@ function ManageMovies() {
     <>
       <MyNavbar></MyNavbar>
       {isAuthenticated ? (
-        <div>
-          {" "}
-          <Slider></Slider>
-          <TopTenMovies
-            genre={"Action"}
-            title={"Top 10 on IMDb this week"}
-            colorType={"yellow"}
-          ></TopTenMovies>
-          <TopTenMovies
-            genre={"Drama"}
-            title={"Top 10 Box Office Movies"}
-            colorType={"green"}
-          ></TopTenMovies>
-          {/* <Gallery></Gallery> */}
-        </div>
+        <div>do the same logic as users</div>
       ) : (
         <div>Sign In please</div>
       )}
