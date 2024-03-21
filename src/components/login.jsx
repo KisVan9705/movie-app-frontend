@@ -24,7 +24,7 @@ function Login(props) {
         // Handle successful login response
         console.log("Login successful");
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("role", "admin");
+        localStorage.setItem("role", response.data.role);
 
         navigate("/");
 
@@ -41,7 +41,7 @@ function Login(props) {
   return (
     <div className="mycontainer">
       <h1>Welcome Back to IMDb</h1>
-      <span style={{color:"red"}}>{errorMessage}</span>
+      <span style={{ color: "red" }}>{errorMessage}</span>
       <form onSubmit={loginUser}>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
