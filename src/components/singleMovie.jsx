@@ -36,25 +36,49 @@ export const SingleMovie = () => {
           {data ? (
             <div className="singleMovie">
               <div className="singleMovieLeft">
-              <h2>{data.title}</h2>
-              <iframe  width="700px" height="500px"  src={data.trailer}></iframe>
-             
+                <h2>{data.title}</h2>
+                <iframe
+                  width="700px"
+                  height="500px"
+                  src={data.trailer}
+                ></iframe>
               </div>
               <div className="singleMovieRight">
-
-             
-                 
-              <p>Year : {data.year}</p>
-                <p>Released Date :{data.releasedDated}</p>
-                <p>RunTime : {data.runtime} </p>
-                <p>Director : {data.director}</p>
-                <p>Award : {data.award}</p>
-                <p>Director : {data.director}</p>
-                <p>Actors : {data.actors}</p>
-                <p>Genre : {data.genre}</p>
-                <p>Country : {data.country}</p>
-                <p>Languages :{data.language}</p>
-                <p>Rating : {data.imdbIDRating}</p>
+                <p>
+                  <b>Year :</b> {data.year}
+                </p>
+                <p>
+                  <b> Released Date :</b>
+                  {data.releasedDated}
+                </p>
+                <p>
+                  <b>RunTime :</b> {data.runtime}{" "}
+                </p>
+                <p>
+                  <b>Director :</b> {data.director}
+                </p>
+                <p>
+                  <b>Award :</b> {data.award}
+                </p>
+                <p>
+                  <b>Director :</b> {data.director}
+                </p>
+                <p>
+                  <b>Actors :</b> {data.actors}
+                </p>
+                <p>
+                  <b>Genre :</b> {data.genre}
+                </p>
+                <p>
+                  <b>Country :</b> {data.country}
+                </p>
+                <p>
+                  <b>Languages :</b>
+                  {data.language}
+                </p>
+                <p>
+                  <b>Rating :</b> {data.imdbIDRating}
+                </p>
               </div>
             </div>
           ) : (

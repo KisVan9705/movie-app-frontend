@@ -23,6 +23,7 @@ function Login(props) {
         // Handle successful login response
         console.log("Login successful");
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("role", "admin");
 
         navigate("/");
 
@@ -36,36 +37,36 @@ function Login(props) {
   };
 
   return (
-    <div className='mycontainer'>
+    <div className="mycontainer">
       <h1>Welcome Back to IMDb</h1>
       <form onSubmit={loginUser}>
-        <div className='form-group'>
-          <label htmlFor='email'>Email:</label>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
           <input
-            type='email'
-            name='email'
-            id='email'
+            type="email"
+            name="email"
+            id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder='Enter your email'
+            placeholder="Enter your email"
             required
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password:</label>
+        <div className="form-group">
+          <label htmlFor="password">Password:</label>
           <input
-            type='password'
-            name='password'
-            id='password'
+            type="password"
+            name="password"
+            id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder='Enter Your password'
+            placeholder="Enter Your password"
             required
           />
         </div>
-        <button type='submit'>Login</button>
+        <button type="submit">Login</button>
       </form>
-      <Link to='/registration'>Not registered yet?</Link>
+      <Link to="/registration">Not registered yet?</Link>
     </div>
   );
 }

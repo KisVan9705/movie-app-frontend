@@ -243,3 +243,18 @@ body {
   text-decoration: underline;
   font-weight: bold;
 }
+
+.dashboardContainer {
+  width: 70%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+.table-image {
+  td,
+  th {
+    vertical-align: middle;
+  }
+}

@@ -9,7 +9,7 @@ import {
   Button,
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { isAuthenticated, signOut } from "../utils/authentication";
+import { isAdmin, isAuthenticated, signOut } from "../utils/authentication";
 
 function MyNavbar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -57,16 +57,33 @@ function MyNavbar() {
               Search
             </Button>
           </Form>
-          <div className="pr-4">
+          <div className="pr-2">
+            {isAdmin() ? (
+              <div>
+                <Link to="/manageMovies">
+                  <Button variant="outline-light" className="btn.sm ms-4">
+                    Movies
+                  </Button>
+                </Link>
+                <Link to="/manageUsers">
+                  <Button variant="outline-light" className="btn.sm ms-4">
+                    Users
+                  </Button>
+                </Link>
+              </div>
+            ) : (
+              <></>
+            )}
+
             {!isAuthenticated() ? (
               <Link to="/login">
-                <Button variant="outline-light" className="ms-4">
+                <Button variant="outline-light" className="btn.sm ms-4">
                   Sign In
                 </Button>
               </Link>
             ) : (
-              <Link to="/login" onClick={signOut}>
-                <Button variant="outline-light" className="ms-4">
+              <Link onClick={signOut}>
+                <Button variant="outline-light" className="btn.sm ms-4">
                   Sign Out
                 </Button>
               </Link>

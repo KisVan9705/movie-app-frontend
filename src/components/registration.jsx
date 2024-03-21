@@ -26,6 +26,7 @@ function Registration(props) {
       .then((response) => {
         console.log("Response data:", response.data);
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("role", "admin");
         navigate("/");
         //we have to redirect the user to home page after successful registration
       })
@@ -35,56 +36,56 @@ function Registration(props) {
   };
 
   return (
-    <div className='mycontainer'>
+    <div className="mycontainer">
       <h1>Create Your IMDb Account</h1>
       <form onSubmit={registerUser}>
-        <div className='form-group'>
-          <label htmlFor='name'>Name:</label>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
           <input
-            type='text'
-            name='username'
-            id='name'
+            type="text"
+            name="username"
+            id="name"
             value={username}
             onChange={(e) => setUserName(e.target.value)}
             required
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='email'>Email:</label>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
           <input
-            type='email'
-            name='email'
-            id='email'
+            type="email"
+            name="email"
+            id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password:</label>
+        <div className="form-group">
+          <label htmlFor="password">Password:</label>
           <input
-            type='password'
-            name='password'
-            id='password'
+            type="password"
+            name="password"
+            id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='confirm-password'>Confirm Password:</label>
+        <div className="form-group">
+          <label htmlFor="confirm-password">Confirm Password:</label>
           <input
-            type='password'
-            name='confirmedPassword'
-            id='confirm-password'
+            type="password"
+            name="confirmedPassword"
+            id="confirm-password"
             value={confirmedPassword}
             onChange={(e) => setConfirmedPassword(e.target.value)}
             required
           />
         </div>
-        <button type='submit'>Register</button>
+        <button type="submit">Register</button>
         <br />
-        <Link to='/login'>Login</Link>
+        <Link to="/login">Login</Link>
       </form>
     </div>
   );

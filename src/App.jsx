@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import { isAuthenticated } from "./utils/authentication";
 import Search from "./components/search";
 import { SingleMovie } from "./components/singleMovie";
+import ManageMovies from "./pages/ManageMovies";
+import ManageUsers from "./pages/ManageUser";
 
 function App() {
   const ProtectedRoute = ({ element }) => {
@@ -25,6 +27,16 @@ function App() {
         <Route
           path="/movie/"
           element={<ProtectedRoute element={<SingleMovie />} />}
+        />
+
+        <Route
+          path="/manageMovies/"
+          element={<ProtectedRoute element={<ManageMovies />} />}
+        />
+
+        <Route
+          path="/manageUsers/"
+          element={<ProtectedRoute element={<ManageUsers />} />}
         />
         <Route
           path="/login"
