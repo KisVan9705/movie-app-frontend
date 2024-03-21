@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+
 import {
   Navbar,
   Nav,
@@ -82,11 +83,17 @@ function MyNavbar() {
                 </Button>
               </Link>
             ) : (
-              <Link onClick={signOut}>
-                <Button variant="outline-light" className="btn.sm ms-4">
-                  Sign Out
-                </Button>
-              </Link>
+              <Button
+                variant="outline-light"
+                className="btn.sm ms-4"
+                onClick={() => {
+                  signOut();
+                  // After signing out, you can redirect to the login page programmatically
+                  navigate("/login");
+                }}
+              >
+                Sign Out
+              </Button>
             )}
           </div>
         </Navbar.Collapse>
