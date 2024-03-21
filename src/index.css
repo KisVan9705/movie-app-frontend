@@ -237,6 +237,7 @@ body {
   align-items: left;
   padding-top: 30px;
   padding-left: 50px;
+  margin-top: 40px;
 }
 .singleMovieRight > h3 {
   text-decoration: underline;

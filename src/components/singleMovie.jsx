@@ -36,11 +36,15 @@ export const SingleMovie = () => {
           {data ? (
             <div className="singleMovie">
               <div className="singleMovieLeft">
-                <img src={data.poster} alt=" movie poster" width="500px" />
+              <h2>{data.title}</h2>
+              <iframe  width="700px" height="500px"  src={data.trailer}></iframe>
+             
               </div>
               <div className="singleMovieRight">
-                <h3>{data.title}</h3>
-                <p>Year : {data.year}</p>
+
+             
+                 
+              <p>Year : {data.year}</p>
                 <p>Released Date :{data.releasedDated}</p>
                 <p>RunTime : {data.runtime} </p>
                 <p>Director : {data.director}</p>
