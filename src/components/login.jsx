@@ -4,7 +4,7 @@ import { Link, redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Login(props) {
-  const apiUrl = "http://localhost:8080/login";
+  const apiUrl = "http://localhost:8080/user/login";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

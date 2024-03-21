@@ -7,7 +7,7 @@ const Slider = () => {
   const [data, setData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const urlApi = "http://localhost:8080/search?country=USA&number=4";
+  const urlApi = "http://localhost:8080/movie/search?country=USA&number=4";
 
   useEffect(() => {
     const fetchData = async () => {

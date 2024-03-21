@@ -21,7 +21,7 @@ function Search() {
   const fetchData = async (searchText) => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/search?title=" + searchText
+        "http://localhost:8080/movie/search?title=" + searchText
       );
       setData(response.data);
       console.log(response.data);

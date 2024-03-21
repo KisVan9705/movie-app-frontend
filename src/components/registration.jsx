@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Registration(props) {
-  const apiUrl = "http://localhost:8080/signup";
+  const apiUrl = "http://localhost:8080/user/signup";
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
