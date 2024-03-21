@@ -26,7 +26,7 @@ function Registration(props) {
       .then((response) => {
         console.log("Response data:", response.data);
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("role", "admin");
+        localStorage.setItem("role", response.data.role);
         navigate("/");
         //we have to redirect the user to home page after successful registration
       })

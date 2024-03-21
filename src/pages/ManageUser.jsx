@@ -35,7 +35,6 @@ function ManageUsers() {
                 <th scope="col">User</th>
                 <th scope="col">Email</th>
                 <th scope="col">Role</th>
-                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -45,20 +44,7 @@ function ManageUsers() {
                     <th scope="row">{index + 1}. </th>
                     <td>{user.username}</td>
                     <td>{user.email}</td>
-                    <td>
-                      <select name="role" id="role">
-                        <option value="admin">Admin</option>
-                        <option value="customer">Customer</option>
-                      </select>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-success">
-                        <i class="fas fa-edit"></i>
-                      </button>
-                      <button type="button" class="btn btn-danger">
-                        <i class="far fa-trash-alt"></i>
-                      </button>
-                    </td>
+                    <td>{user.role}</td>
                   </tr>
                 ))
               ) : (
