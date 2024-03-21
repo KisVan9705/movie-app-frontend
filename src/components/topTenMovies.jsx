@@ -3,7 +3,8 @@ import axios from "axios";
 import { CurrentMovie } from "./currentMovie";
 
 const TopTenMovies = ({ genre, title, colorType }) => {
-  const uriApi = "http://localhost:8080/movie/search?genre=" + genre + "&number=10";
+  const uriApi =
+    "http://localhost:8080/movie/search?genre=" + genre + "&number=10";
   const [movies, setMovies] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalVisible = 7;
@@ -57,6 +58,7 @@ const TopTenMovies = ({ genre, title, colorType }) => {
         <div className="moviesWrapper">
           {visibleMovies.map((movie, index) => (
             <CurrentMovie
+              key={index}
               movie={movie}
               index={index}
               currentIndex={currentIndex}

@@ -7,6 +7,7 @@ const MovieList = ({ data, currentIndex, handleListItemClick }) => {
       <ul>
         {data.map((movie, index) => (
           <MovieItem
+            key={index}
             movie={movie}
             currentIndex={currentIndex}
             index={index}

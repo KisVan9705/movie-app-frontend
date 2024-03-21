@@ -37,9 +37,17 @@ function MyNavbar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Movies & TV</Nav.Link>
-            <Nav.Link href="/">Celebs</Nav.Link>
-            <Nav.Link href="/">TV Shows</Nav.Link>
-            <Nav.Link href="/">News & Awards</Nav.Link>
+
+            {isAdmin() ? (
+              <Nav.Link href="/manageMovies">Manage Movies</Nav.Link>
+            ) : (
+              <></>
+            )}
+            {isAdmin() ? (
+              <Nav.Link href="/manageUsers">Manage Users</Nav.Link>
+            ) : (
+              <></>
+            )}
           </Nav>
           <Form inline className="d-flex">
             <FormControl
@@ -58,44 +66,25 @@ function MyNavbar() {
               Search
             </Button>
           </Form>
-          <div className="pr-2">
-            {isAdmin() ? (
-              <div>
-                <Link to="/manageMovies">
-                  <Button variant="outline-light" className="btn.sm ms-4">
-                    Movies
-                  </Button>
-                </Link>
-                <Link to="/manageUsers">
-                  <Button variant="outline-light" className="btn.sm ms-4">
-                    Users
-                  </Button>
-                </Link>
-              </div>
-            ) : (
-              <></>
-            )}
-
-            {!isAuthenticated() ? (
-              <Link to="/login">
-                <Button variant="outline-light" className="btn.sm ms-4">
-                  Sign In
-                </Button>
-              </Link>
-            ) : (
-              <Button
-                variant="outline-light"
-                className="btn.sm ms-4"
-                onClick={() => {
-                  signOut();
-                  // After signing out, you can redirect to the login page programmatically
-                  navigate("/login");
-                }}
-              >
-                Sign Out
+          {!isAuthenticated() ? (
+            <Link to="/login">
+              <Button variant="outline-light" className="btn.sm ms-4">
+                Sign In
               </Button>
-            )}
-          </div>
+            </Link>
+          ) : (
+            <Button
+              variant="outline-light"
+              className="btn.sm ms-4"
+              onClick={() => {
+                signOut();
+                // After signing out, you can redirect to the login page programmatically
+                navigate("/login");
+              }}
+            >
+              Sign Out
+            </Button>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
