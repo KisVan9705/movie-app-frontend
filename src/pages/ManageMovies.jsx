@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Gallery from "../components/gallery";
 import Slider from "../components/slider";
 import { isAuthenticated } from "../utils/authentication";
@@ -6,6 +6,7 @@ import MyNavbar from "../components/navbar";
 import ImdbFooter from "../components/footer";
 
 import TopTenMovies from "../components/topTenMovies";
+import axios from "axios";
 
 function ManageMovies() {
   const [data, setData] = useState(null); // State to store fetched data
@@ -16,8 +17,8 @@ function ManageMovies() {
   const fetchData = async () => {
     try {
       const response = await axios.get("http://localhost:8080/movie/search");
-      setData(response.data.movies);
-      console.log(response.data.movies);
+      setData(response.data);
+      console.log(response.data);
     } catch (error) {
       setData(undefined);
       console.error("Error fetching data:", error);
@@ -36,6 +37,7 @@ function ManageMovies() {
               <tr>
                 <th scope="col">No.</th>
                 <th scope="col">Title</th>
+                <th scope="col">Year</th>
                 <th scope="col">Genre</th>
                 <th scope="col">Rating</th>
                 <th scope="col">Director</th>
@@ -50,9 +52,9 @@ function ManageMovies() {
                   <tr>
                     <th scope="row">{index + 1}. </th>
                     <td>{movie.title}</td>
-                    <td>{movie.genre}</td>
                     <td>{movie.year}</td>
-                    <td>{movie.imdbID}</td>
+                    <td>{movie.genre}</td>
+                    <td>{movie.imdbIDRating}</td>
                     <td>{movie.director}</td>
                     <td>{movie.language}</td>
                     <td>{movie.country}</td>
