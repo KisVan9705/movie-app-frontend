@@ -21,6 +21,11 @@ function MyNavbar() {
     navigate(`/search/?searchText=${searchTerm}`); // Redirect with search term
   };
 
+  function signOut() {
+    localStorage.removeItem("token");
+    navigate("/login");
+  }
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -79,7 +84,7 @@ function MyNavbar() {
               onClick={() => {
                 signOut();
                 // After signing out, you can redirect to the login page programmatically
-                navigate("/login");
+                // navigate("/login");
               }}
             >
               Sign Out
