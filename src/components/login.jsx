@@ -7,6 +7,7 @@ function Login(props) {
   const apiUrl = "http://localhost:8080/user/login";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -32,6 +33,7 @@ function Login(props) {
       })
       .catch((error) => {
         // Handle login error
+        setErrorMessage("Email or the password not matched");
         console.error("Login error:", error.message);
       });
   };
@@ -39,6 +41,7 @@ function Login(props) {
   return (
     <div className="mycontainer">
       <h1>Welcome Back to IMDb</h1>
+      <span style={{color:"red"}}>{errorMessage}</span>
       <form onSubmit={loginUser}>
         <div className="form-group">
           <label htmlFor="email">Email:</label>

@@ -83,6 +83,8 @@ function MyNavbar() {
               className="btn.sm ms-4"
               onClick={() => {
                 signOut();
+                // After signing out, you can redirect to the login page programmatically
+                // navigate("/login");
               }}
             >
               Sign Out
